@@ -84,9 +84,12 @@ Comprehensive analysis of **1,000,000+** transactional records from Shopverse, a
 DROP TABLE IF EXISTS shopverse_records;
 ```
 
--- =============================================
+-- Check secure file privileges
+```sql
+SHOW VARIABLES LIKE 'secure_file_priv';
+```
+
 -- LOAD DATA INFILE (Adjust path as per your MySQL setup)
--- =============================================
 ```sql
 LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/amazon_shopverse_records.csv'
 INTO TABLE shopverse_records
