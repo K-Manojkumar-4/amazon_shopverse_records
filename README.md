@@ -38,7 +38,7 @@ Comprehensive analysis of **1,000,000+** transactional records from Shopverse, a
 - **Source**: Synthetic/processed Amazon Shopverse e-commerce records
 - **Time Period**: Multi-year (including 2023-2024)
 - **Key Tables**: `shopverse_records` (denormalized transactional data)
-- **Columns**: OrderID, OrderDate, Customer details, Product Name, Category, locations, Seller info etc,...
+- **Columns**: OrderID, OrderDate, CustomerID, CustomerName, ProductID, ProductName, Category, Brand, Quantity, UnitPrice, Discount, Tax, ShippingCost, TotalAmount, PaymentMethod, OrderStatus, City, State, Country, SellerID — all match.
 
 ## Queries Covered
 
@@ -73,29 +73,21 @@ Comprehensive analysis of **1,000,000+** transactional records from Shopverse, a
 
 ## Project Structure
  
- **Create Database**
-   ```sql
-   CREATE DATABASE amazon_shopverse_records;
-   USE amazon_shopverse_records;
-   ```
+amazon-shopverse-records/
+├── README.md                    # Comprehensive project documentation, setup guide, and business insights
+├── schema.sql                   # Database creation, optimized table schema, constraints, and performance indexes
+├── data_loading.sql             # Secure data ingestion from CSV with validation queries
+├── exploration.sql              # Data profiling, quality assessment, and exploratory analysis
+├── analysis.sql                 # Advanced analytical queries covering KPIs, trends, segmentation, and business intelligence
+└── RESULT.md                     # Directory for storing query outputs, reports, and exported results (CSV/SQL)
 
--- Drop existing table if exists
-```sql
-DROP TABLE IF EXISTS shopverse_records;
-```
+## Project Organization
 
--- Check secure file privileges
-```sql
-SHOW VARIABLES LIKE 'secure_file_priv';
-```
+The repository follows a clean, modular, and production-ready structure designed for scalability and maintainability:
 
--- LOAD DATA INFILE (Adjust path as per your MySQL setup)
-```sql
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/amazon_shopverse_records.csv'
-INTO TABLE shopverse_records
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS
-```
-
+- README.md – Executive summary, business context, setup instructions, and key insights.
+- schema.sql – Defines the relational schema with proper data types, constraints, indexes, and documentation.
+- data_loading.sql – Handles secure data import and includes post-load integrity checks.
+- exploration.sql – Performs initial data discovery, quality validation, and descriptive statistics.
+- analysis.sql – Contains 20+ advanced SQL queries addressing critical business questions using CTEs, window functions, and time-series analysis.
+- RESULT.md – Dedicated folder for generated reports and analytical outputs.
