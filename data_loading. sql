@@ -1,0 +1,18 @@
+-- =============================================
+-- Amazon Shopverse Records - Data Loading
+-- =============================================
+
+USE amazon_shopverse_records;
+
+-- Check secure file privileges
+SHOW VARIABLES LIKE 'secure_file_priv';
+
+-- =============================================
+-- LOAD DATA INFILE (Adjust path as per your MySQL setup)
+-- =============================================
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/amazon_shopverse_records.csv'
+INTO TABLE shopverse_records
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
