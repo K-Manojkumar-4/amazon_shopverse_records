@@ -70,17 +70,6 @@ Comprehensive analysis of **1,000,000+** transactional records from Shopverse, a
 - Operational efficiency (shipping, returns, discounts)
 - Geographic market performance
 
-
-## Project Structure
- 
-amazon-shopverse-records/
-├── README.md                    # Comprehensive project documentation, setup guide, and business insights
-├── schema.sql                   # Database creation, optimized table schema, constraints, and performance indexes
-├── data_loading.sql             # Secure data ingestion from CSV with validation queries
-├── exploration.sql              # Data profiling, quality assessment, and exploratory analysis
-├── analysis.sql                 # Advanced analytical queries covering KPIs, trends, segmentation, and business intelligence
-└── RESULT.md                     # Directory for storing query outputs, reports, and exported results (CSV/SQL)
-
 ## Project Organization
 
 The repository follows a clean, modular, and production-ready structure designed for scalability and maintainability:
