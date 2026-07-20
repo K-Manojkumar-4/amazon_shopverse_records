@@ -38,3 +38,6 @@ where
 	State is null or
 	Country is null or
 	SellerID is null ;
+
+-- Sample Data
+SELECT * FROM shopverse_records LIMIT 10;
